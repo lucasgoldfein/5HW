@@ -1,0 +1,91 @@
+---
+title: "HW5 Slideshow"
+author: "Lucas Goldfein"
+date: "2025-02-27"
+format: revealjs
+bibliography: ref.bib
+---
+
+
+## Introduction
+
+This presentation explores the World Development Indicators dataset for 2022, focusing on GDP per capita, inflation rate, and life expectancy across different countries.
+
+
+## Summary Statistics
+
+The indicators used in the analysis include:
+
+- GDP per capita (Average: 20,345)
+- Inflation rate (Range: -6.7% to 171.2%)
+- Life expectancy (25%: 66.8, 75%: 78.5)
+
+`
+import pandas as pd
+import matplotlib.pyplot as plt
+df = pd.read_csv('wdi.csv')
+gdp_stats = df['gdp_per_capita'].describe()
+inflation_stats = df['inflation_rate'].describe()
+life_expectancy_stats = df['life_expectancy'].describe()
+
+gdp_stats, inflation_stats, life_expectancy_stats
+`
+```{python}
+import pandas as pd
+import matplotlib.pyplot as plt
+df = pd.read_csv('wdi.csv')
+gdp_stats = df['gdp_per_capita'].describe()
+inflation_stats = df['inflation_rate'].describe()
+life_expectancy_stats = df['life_expectancy'].describe()
+
+gdp_stats, inflation_stats, life_expectancy_stats
+```
+
+
+## GDP per Capita - Top 10 Countries
+
+```{python}
+df_sorted = df.sort_values('gdp_per_capita', ascending=False).head(10)
+plt.figure(figsize=(10, 6))
+plt.bar(df_sorted['country'], df_sorted['gdp_per_capita'])
+plt.title('Top 10 Countries by GDP per Capita in 2022')
+plt.xlabel('Country')
+plt.ylabel('GDP coper Capita')
+plt.xticks(rotation=90)
+plt.show()
+
+```
+##
+Inflation vs GDP Growth Rate
+
+```{python}
+# Scatter plot for inflation vs GDP growth rate
+plt.figure(figsize=(10, 6))
+plt.scatter(df['inflation_rate'], df['gdp_growth_rate'])
+plt.title('Inflation vs GDP Growth Rate')
+plt.xlabel('Inflation Rate (%)')
+plt.ylabel('GDP Growth Rate (%)')
+plt.show()
+
+```
+##
+
+| Country        | GDP per Capita | Inflation Rate | Life Expectancy |
+|----------------|----------------|----------------|-----------------|
+| Afghanistan    | 352.6          | NaN            | 62.9            |
+| Albania        | 6810.1         | 6.73           | 76.8            |
+| Algeria        | 5023.3         | 9.27           | 77.1            |
+| Argentina      | 9784.5         | 51.27          | 76.2            |
+| Australia      | 64271.0        | 5.01           | 82.5            |
+| Austria        | 88573.2        | 9.30           | 81.5            |
+| Brazil         | 8245.1         | 5.79           | 75.0            |
+| Canada         | 45987.3        | 6.80           | 82.0            |
+| China          | 12456.5        | 2.08           | 77.0            |
+| France         | 47864.4        | 5.24           | 82.2            |
+
+## Conclusion
+
+
+:::{.fragment .fade-in}
+In conclusion, we analyzed the World Development Indicators for 2022 and observed variations in key metrics like GDP per capita, inflation, and life expectancy. These indicators provide insights into the economic and social conditions of countries worldwide.
+:::
