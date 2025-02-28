@@ -1,0 +1,44 @@
+[
+  {
+    "objectID": "hw5.html#introduction",
+    "href": "hw5.html#introduction",
+    "title": "HW5 Slideshow",
+    "section": "Introduction",
+    "text": "Introduction\nThis presentation explores the World Development Indicators dataset for 2022, focusing on GDP per capita, inflation rate, and life expectancy across different countries."
+  },
+  {
+    "objectID": "hw5.html#summary-statistics",
+    "href": "hw5.html#summary-statistics",
+    "title": "HW5 Slideshow",
+    "section": "Summary Statistics",
+    "text": "Summary Statistics\nThe indicators used in the analysis include:\n\nGDP per capita (Average: 20,345)\nInflation rate (Range: -6.7% to 171.2%)\nLife expectancy (25%: 66.8, 75%: 78.5)\n\n` import pandas as pd import matplotlib.pyplot as plt df = pd.read_csv(‘wdi.csv’) gdp_stats = df[‘gdp_per_capita’].describe() inflation_stats = df[‘inflation_rate’].describe() life_expectancy_stats = df[‘life_expectancy’].describe()\ngdp_stats, inflation_stats, life_expectancy_stats `\n\n\n(count       203.000000\n mean      20345.707649\n std       31308.942225\n min         259.025031\n 25%        2570.563284\n 50%        7587.588173\n 75%       25982.630050\n max      240862.182448\n Name: gdp_per_capita, dtype: float64,\n count    169.000000\n mean      12.493936\n std       19.682433\n min       -6.687321\n 25%        5.518129\n 50%        7.967574\n 75%       11.665567\n max      171.205491\n Name: inflation_rate, dtype: float64,\n count    209.000000\n mean      72.416519\n std        7.713322\n min       52.997000\n 25%       66.782000\n 50%       73.514634\n 75%       78.475000\n max       85.377000\n Name: life_expectancy, dtype: float64)"
+  },
+  {
+    "objectID": "hw5.html#gdp-per-capita---top-10-countries",
+    "href": "hw5.html#gdp-per-capita---top-10-countries",
+    "title": "HW5 Slideshow",
+    "section": "GDP per Capita - Top 10 Countries",
+    "text": "GDP per Capita - Top 10 Countries"
+  },
+  {
+    "objectID": "hw5.html#section",
+    "href": "hw5.html#section",
+    "title": "HW5 Slideshow",
+    "section": "",
+    "text": "Inflation vs GDP Growth Rate"
+  },
+  {
+    "objectID": "hw5.html#section-1",
+    "href": "hw5.html#section-1",
+    "title": "HW5 Slideshow",
+    "section": "",
+    "text": "Country\nGDP per Capita\nInflation Rate\nLife Expectancy\n\n\n\n\nAfghanistan\n352.6\nNaN\n62.9\n\n\nAlbania\n6810.1\n6.73\n76.8\n\n\nAlgeria\n5023.3\n9.27\n77.1\n\n\nArgentina\n9784.5\n51.27\n76.2\n\n\nAustralia\n64271.0\n5.01\n82.5\n\n\nAustria\n88573.2\n9.30\n81.5\n\n\nBrazil\n8245.1\n5.79\n75.0\n\n\nCanada\n45987.3\n6.80\n82.0\n\n\nChina\n12456.5\n2.08\n77.0\n\n\nFrance\n47864.4\n5.24\n82.2"
+  },
+  {
+    "objectID": "hw5.html#conclusion",
+    "href": "hw5.html#conclusion",
+    "title": "HW5 Slideshow",
+    "section": "Conclusion",
+    "text": "Conclusion\n\nIn conclusion, we analyzed the World Development Indicators for 2022 and observed variations in key metrics like GDP per capita, inflation, and life expectancy. These indicators provide insights into the economic and social conditions of countries worldwide."
+  }
+]
